@@ -10,7 +10,7 @@ const routes: Routes = [
 ]; //list will have "canActivate : [AuthGuard]" added once login works to prevent skipping login
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
