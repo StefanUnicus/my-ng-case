@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+    <table class="table table-striped border mt-1">
+        <thead>
+            <th scope="col">Product Name</th>
+            <th scope="col">Product Price</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of entrylist">
+                <td>{{data.name}}</td>
+                <td>{{data.price}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
