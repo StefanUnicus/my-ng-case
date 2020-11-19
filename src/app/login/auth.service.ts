@@ -16,7 +16,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  login(username: String, password: String): Observable<any> {
+  login(username: String, password: String): Observable<any> { //not finalized and thus lacks the right http address.
     return this.http.post<any>('http://localhost:5000/', {username, password});
   }
 

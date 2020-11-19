@@ -7,7 +7,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: '', component: LoginComponent},
   {path: 'list', component: ListComponent}
-];
+]; //list will have "canActivate : [AuthGuard]" added once login works to prevent skipping login
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
