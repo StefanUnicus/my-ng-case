@@ -12,7 +12,7 @@ export class AuthService {
   CURRENT_USER = 'currentUser'
   TOKEN = 'access_token'
 
-  jwthelp = new JwtHelperService();
+  //jwthelp = new JwtHelperService(); //couldn't get to work with latest angular and deemed less important
 
   constructor(private http: HttpClient) { }
 
@@ -38,10 +38,11 @@ export class AuthService {
 
     if (!token) return false;
 
-    else if (this.jwthelp.isTokenExpired(token)) {
+    /*else if (this.jwthelp.isTokenExpired(token)) {
       this.logout();
       return false;
-    }
+    }*/ //code to check if token has expired, requires JwtHelperService to function.
+
     return true;
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { List } from './list';
 import { ListService } from './list.service';
 
@@ -17,7 +18,9 @@ export class ListComponent implements OnInit {
   entrylist : List[];
 
   constructor(
-    private listService: ListService
+    private route: ActivatedRoute,
+    private router: Router,
+    private listService: ListService,
   ) { }
 
   ngOnInit(): void {
@@ -27,7 +30,7 @@ export class ListComponent implements OnInit {
   handleAddEntry(){
     if (this.entryname == "" || this.entryprice == null) {
       alert("One or more empty fields! Fill all before posting!");
-      return false;
+      return false; //prevents adding null values
     } else {
       this.listService.addListitem(this.entryname, this.entryprice).subscribe((result)=> {
         this.successMessage = this.entryname + ' added successfully!';
